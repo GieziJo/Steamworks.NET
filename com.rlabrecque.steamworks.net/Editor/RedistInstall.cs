@@ -12,7 +12,7 @@ using System.Collections.Generic;
 public class RedistInstall {
 	static RedistInstall() {
 		WriteSteamAppIdTxtFile();
-		AddDefineSymbols();
+		// AddDefineSymbols();
 		CheckForOldDlls();
 	}
 
@@ -56,15 +56,15 @@ public class RedistInstall {
 		}
 	}
 
-	static void AddDefineSymbols() {
-		string currentDefines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
-		HashSet<string> defines = new HashSet<string>(currentDefines.Split(';')) {
-			"STEAMWORKS_NET"
-		};
-
-		string newDefines = string.Join(";", defines);
-		if (newDefines != currentDefines) {
-			PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup, newDefines);
-		}
-	}
+	// static void AddDefineSymbols() {
+	// 	string currentDefines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
+	// 	HashSet<string> defines = new HashSet<string>(currentDefines.Split(';')) {
+	// 		"STEAMWORKS_NET"
+	// 	};
+	//
+	// 	string newDefines = string.Join(";", defines);
+	// 	if (newDefines != currentDefines) {
+	// 		PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup, newDefines);
+	// 	}
+	// }
 }
